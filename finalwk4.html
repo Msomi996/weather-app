@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/vendors~app~embed~sandbox~sandbox-startup.7424373eb.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/vendors~app~embed~sandbox-startup.b754f8b0e.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/default~app~embed~sandbox~sandbox-startup.faf874f4d.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/sandbox-startup.9d6da3b9a.js"></script>
+
+<script src="//codesandbox.io/static/browserfs12/browserfs.min.js" type="text/javascript"></script>
+
+<script>
+  window.process = BrowserFS.BFSRequire('process');
+  window.Buffer = BrowserFS.BFSRequire('buffer').Buffer;
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Weather App</title>
+    <link rel="manifest" href="/manifest.json">
+  
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: arial, sans-serif;
+      }
+      
+      h1 {
+        color: #7c7c7c;
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 28px;
+        margin: 0;
+      }
+      
+      ul {
+        margin: 0 0 10px;
+        padding: 0;
+      }
+      
+      li {
+        color: #7c7c7c;
+        font-size: 16px;
+        font-weight: 100;
+        height: 19px;
+        line-height: 1;
+        list-style: none;
+      }
+      
+      .weather-app {
+        border: 1px solid #dadde1;
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 10px;
+        max-width: 600px;
+      }
+      
+      .weather-icon {
+        height: 64px;
+        width: 64px;
+        margin-right: 10px;
+      }
+      
+      .temperature {
+        color: rgb(33, 33, 33);
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      
+      .units {
+        position: relative;
+        top: -34px;
+      }
+      
+      .search-form {
+        margin-bottom: 20px;
+      }
+    </style>
+    <div class="container">
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+          </div>
+        </form>
+        <h1 id="city">
+          Johannesburg, South Africa
+        </h1>
+        <ul>
+          <li id="date"></li>
+          <li>
+            Partly Cloudy
+          </li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="Cloudy icon"
+                class="weather-icon float-left"
+              />
+              <div class="float-left">
+                <span class="temperature" id="temperature">22</span
+                ><span class="units">
+                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>
+                Precipitation: 0%
+              </li>
+              <li>
+                Humidity: 83%
+              </li>
+              <li>
+                Wind: 4 km/h
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/vendors~app~codemirror-editor~monaco-editor~sandbox.ad4e6d3c4.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/common-sandbox.d3049e87f.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/vendors~app~sandbox.aca52037e.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/vendors~sandbox.3bd3135bd.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/default~app~embed~sandbox.080afe32f.chunk.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/sandbox.93bd4e2a0.js"></script>
+    <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/banner.0b5d84a2b.js"></script>
+  <script>
+};
+
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"807fc3176c4d055a","token":"7449176f14aa420c959831edd48bd5b7","version":"2023.8.0","si":100}' crossorigin="anonymous"></script>
+<script>
+  (function $csb$eval(require, module, exports, process, global, __dirname, __filename, $csbImport) {"use strict";
+
+function formatDate(date) {
+  var hours = date.getHours();
+  if (hours < 10) {
+    hours = "0".concat(hours);
+  }
+  var minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = "0".concat(minutes);
+  }
+  var dayIndex = date.getDay();
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var day = days[dayIndex];
+  return "".concat(day, " ").concat(hours, ":").concat(minutes);
+}
+function search(event) {
+  event.preventDefault();
+  var cityElement = document.querySelector("#city");
+  var cityInput = document.querySelector("#city-input");
+  cityElement.innerHTML = cityInput.value;
+}
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  var temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 66;
+}
+function convertToCelsius(event) {
+  event.preventDefault();
+  var temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 19;
+}
+
+// Feature #1
+var dateElement = document.querySelector("#date");
+var currentTime = new Date();
+dateElement.innerHTML = formatDate(currentTime);
+
+// Feature #2
+var searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
+// Bonus Feature
+var fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+var celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJmb3JtYXREYXRlIiwiZGF0ZSIsImhvdXJzIiwiZ2V0SG91cnMiLCJjb25jYXQiLCJtaW51dGVzIiwiZ2V0TWludXRlcyIsImRheUluZGV4IiwiZ2V0RGF5IiwiZGF5cyIsImRheSIsInNlYXJjaCIsImV2ZW50IiwicHJldmVudERlZmF1bHQiLCJjaXR5RWxlbWVudCIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsImNpdHlJbnB1dCIsImlubmVySFRNTCIsInZhbHVlIiwiY29udmVydFRvRmFocmVuaGVpdCIsInRlbXBlcmF0dXJlRWxlbWVudCIsImNvbnZlcnRUb0NlbHNpdXMiLCJkYXRlRWxlbWVudCIsImN1cnJlbnRUaW1lIiwiRGF0ZSIsInNlYXJjaEZvcm0iLCJhZGRFdmVudExpc3RlbmVyIiwiZmFocmVuaGVpdExpbmsiLCJjZWxzaXVzTGluayJdLCJzb3VyY2VzIjpbIi9zcmMvaW5kZXguanMiXSwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gZm9ybWF0RGF0ZShkYXRlKSB7XG4gIGxldCBob3VycyA9IGRhdGUuZ2V0SG91cnMoKTtcbiAgaWYgKGhvdXJzIDwgMTApIHtcbiAgICBob3VycyA9IGAwJHtob3Vyc31gO1xuICB9XG4gIGxldCBtaW51dGVzID0gZGF0ZS5nZXRNaW51dGVzKCk7XG4gIGlmIChtaW51dGVzIDwgMTApIHtcbiAgICBtaW51dGVzID0gYDAke21pbnV0ZXN9YDtcbiAgfVxuXG4gIGxldCBkYXlJbmRleCA9IGRhdGUuZ2V0RGF5KCk7XG4gIGxldCBkYXlzID0gW1xuICAgIFwiU3VuZGF5XCIsXG4gICAgXCJNb25kYXlcIixcbiAgICBcIlR1ZXNkYXlcIixcbiAgICBcIldlZG5lc2RheVwiLFxuICAgIFwiVGh1cnNkYXlcIixcbiAgICBcIkZyaWRheVwiLFxuICAgIFwiU2F0dXJkYXlcIlxuICBdO1xuICBsZXQgZGF5ID0gZGF5c1tkYXlJbmRleF07XG5cbiAgcmV0dXJuIGAke2RheX0gJHtob3Vyc306JHttaW51dGVzfWA7XG59XG5cbmZ1bmN0aW9uIHNlYXJjaChldmVudCkge1xuICBldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuICBsZXQgY2l0eUVsZW1lbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2NpdHlcIik7XG4gIGxldCBjaXR5SW5wdXQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2NpdHktaW5wdXRcIik7XG4gIGNpdHlFbGVtZW50LmlubmVySFRNTCA9IGNpdHlJbnB1dC52YWx1ZTtcbn1cblxuZnVuY3Rpb24gY29udmVydFRvRmFocmVuaGVpdChldmVudCkge1xuICBldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuICBsZXQgdGVtcGVyYXR1cmVFbGVtZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiN0ZW1wZXJhdHVyZVwiKTtcbiAgdGVtcGVyYXR1cmVFbGVtZW50LmlubmVySFRNTCA9IDY2O1xufVxuXG5mdW5jdGlvbiBjb252ZXJ0VG9DZWxzaXVzKGV2ZW50KSB7XG4gIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG4gIGxldCB0ZW1wZXJhdHVyZUVsZW1lbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3RlbXBlcmF0dXJlXCIpO1xuICB0ZW1wZXJhdHVyZUVsZW1lbnQuaW5uZXJIVE1MID0gMTk7XG59XG5cbi8vIEZlYXR1cmUgIzFcbmxldCBkYXRlRWxlbWVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjZGF0ZVwiKTtcbmxldCBjdXJyZW50VGltZSA9IG5ldyBEYXRlKCk7XG5kYXRlRWxlbWVudC5pbm5lckhUTUwgPSBmb3JtYXREYXRlKGN1cnJlbnRUaW1lKTtcblxuLy8gRmVhdHVyZSAjMlxubGV0IHNlYXJjaEZvcm0gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3NlYXJjaC1mb3JtXCIpO1xuc2VhcmNoRm9ybS5hZGRFdmVudExpc3RlbmVyKFwic3VibWl0XCIsIHNlYXJjaCk7XG5cbi8vIEJvbnVzIEZlYXR1cmVcbmxldCBmYWhyZW5oZWl0TGluayA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjZmFocmVuaGVpdC1saW5rXCIpO1xuZmFocmVuaGVpdExpbmsuYWRkRXZlbnRMaXN0ZW5lcihcImNsaWNrXCIsIGNvbnZlcnRUb0ZhaHJlbmhlaXQpO1xuXG5sZXQgY2Vsc2l1c0xpbmsgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2NlbHNpdXMtbGlua1wiKTtcbmNlbHNpdXNMaW5rLmFkZEV2ZW50TGlzdGVuZXIoXCJjbGlja1wiLCBjb252ZXJ0VG9DZWxzaXVzKTtcbiJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxTQUFTQSxVQUFVQSxDQUFDQyxJQUFJLEVBQUU7RUFDeEIsSUFBSUMsS0FBSyxHQUFHRCxJQUFJLENBQUNFLFFBQVEsQ0FBQyxDQUFDO0VBQzNCLElBQUlELEtBQUssR0FBRyxFQUFFLEVBQUU7SUFDZEEsS0FBSyxPQUFBRSxNQUFBLENBQU9GLEtBQUssQ0FBRTtFQUNyQjtFQUNBLElBQUlHLE9BQU8sR0FBR0osSUFBSSxDQUFDSyxVQUFVLENBQUMsQ0FBQztFQUMvQixJQUFJRCxPQUFPLEdBQUcsRUFBRSxFQUFFO0lBQ2hCQSxPQUFPLE9BQUFELE1BQUEsQ0FBT0MsT0FBTyxDQUFFO0VBQ3pCO0VBRUEsSUFBSUUsUUFBUSxHQUFHTixJQUFJLENBQUNPLE1BQU0sQ0FBQyxDQUFDO0VBQzVCLElBQUlDLElBQUksR0FBRyxDQUNULFFBQVEsRUFDUixRQUFRLEVBQ1IsU0FBUyxFQUNULFdBQVcsRUFDWCxVQUFVLEVBQ1YsUUFBUSxFQUNSLFVBQVUsQ0FDWDtFQUNELElBQUlDLEdBQUcsR0FBR0QsSUFBSSxDQUFDRixRQUFRLENBQUM7RUFFeEIsVUFBQUgsTUFBQSxDQUFVTSxHQUFHLE9BQUFOLE1BQUEsQ0FBSUYsS0FBSyxPQUFBRSxNQUFBLENBQUlDLE9BQU87QUFDbkM7QUFFQSxTQUFTTSxNQUFNQSxDQUFDQyxLQUFLLEVBQUU7RUFDckJBLEtBQUssQ0FBQ0MsY0FBYyxDQUFDLENBQUM7RUFDdEIsSUFBSUMsV0FBVyxHQUFHQyxRQUFRLENBQUNDLGFBQWEsQ0FBQyxPQUFPLENBQUM7RUFDakQsSUFBSUMsU0FBUyxHQUFHRixRQUFRLENBQUNDLGFBQWEsQ0FBQyxhQUFhLENBQUM7RUFDckRGLFdBQVcsQ0FBQ0ksU0FBUyxHQUFHRCxTQUFTLENBQUNFLEtBQUs7QUFDekM7QUFFQSxTQUFTQyxtQkFBbUJBLENBQUNSLEtBQUssRUFBRTtFQUNsQ0EsS0FBSyxDQUFDQyxjQUFjLENBQUMsQ0FBQztFQUN0QixJQUFJUSxrQkFBa0IsR0FBR04sUUFBUSxDQUFDQyxhQUFhLENBQUMsY0FBYyxDQUFDO0VBQy9ESyxrQkFBa0IsQ0FBQ0gsU0FBUyxHQUFHLEVBQUU7QUFDbkM7QUFFQSxTQUFTSSxnQkFBZ0JBLENBQUNWLEtBQUssRUFBRTtFQUMvQkEsS0FBSyxDQUFDQyxjQUFjLENBQUMsQ0FBQztFQUN0QixJQUFJUSxrQkFBa0IsR0FBR04sUUFBUSxDQUFDQyxhQUFhLENBQUMsY0FBYyxDQUFDO0VBQy9ESyxrQkFBa0IsQ0FBQ0gsU0FBUyxHQUFHLEVBQUU7QUFDbkM7O0FBRUE7QUFDQSxJQUFJSyxXQUFXLEdBQUdSLFFBQVEsQ0FBQ0MsYUFBYSxDQUFDLE9BQU8sQ0FBQztBQUNqRCxJQUFJUSxXQUFXLEdBQUcsSUFBSUMsSUFBSSxDQUFDLENBQUM7QUFDNUJGLFdBQVcsQ0FBQ0wsU0FBUyxHQUFHbEIsVUFBVSxDQUFDd0IsV0FBVyxDQUFDOztBQUUvQztBQUNBLElBQUlFLFVBQVUsR0FBR1gsUUFBUSxDQUFDQyxhQUFhLENBQUMsY0FBYyxDQUFDO0FBQ3ZEVSxVQUFVLENBQUNDLGdCQUFnQixDQUFDLFFBQVEsRUFBRWhCLE1BQU0sQ0FBQzs7QUFFN0M7QUFDQSxJQUFJaUIsY0FBYyxHQUFHYixRQUFRLENBQUNDLGFBQWEsQ0FBQyxrQkFBa0IsQ0FBQztBQUMvRFksY0FBYyxDQUFDRCxnQkFBZ0IsQ0FBQyxPQUFPLEVBQUVQLG1CQUFtQixDQUFDO0FBRTdELElBQUlTLFdBQVcsR0FBR2QsUUFBUSxDQUFDQyxhQUFhLENBQUMsZUFBZSxDQUFDO0FBQ3pEYSxXQUFXLENBQUNGLGdCQUFnQixDQUFDLE9BQU8sRUFBRUwsZ0JBQWdCLENBQUMifQ==
+//# sourceURL=https://z2vh5.codesandbox.io/src/index.js
+})
+function formatDate(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[dayIndex];
+
+  return `${day} ${hours}:${minutes}`;
+}
+
+function search(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city");
+  let cityInput = document.querySelector("#city-input");
+  cityElement.innerHTML = cityInput.value;
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 66;
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 19;
+}
+
+// Feature #1
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+dateElement.innerHTML = formatDate(currentTime);
+
+// Feature #2
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
+// Bonus Feature
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+</script>
+</body>
+
+</html>
